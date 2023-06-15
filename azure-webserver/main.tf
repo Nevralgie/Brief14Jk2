@@ -82,8 +82,8 @@ resource "azurerm_linux_virtual_machine" "nginx" {
    location = azurerm_resource_group.webserver.location
    #custom_data = filebase64(".terraform/modules/azure-webserver/azure-webserver/init-script.sh")
    #custom_data = filebase64(".terraform/modules/Prod/azure-webserver/init-script.sh")
-   #custom_data = base64encode(file("${path.module}/init-script.sh"))
-   custom_data = base64encode(file("${path.module}/cloud-init.txt"))
+   custom_data = base64encode(file("${path.module}/init-script.sh"))
+   #custom_data = base64encode(file("${path.module}/cloud-init.txt"))
    network_interface_ids = [
        azurerm_network_interface.webserver.id,
    ]
