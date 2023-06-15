@@ -18,7 +18,7 @@ provider "azurerm" {
 
 
 module "azure-webserver" {
-    source = "github.com/Nevralgie/WebservTerraform/azure-webserver"
+    source = "github.com/Nevralgie/Brief14Jk2/azure-webserver"
     instance_size = var.instance_size
     location = var.location
     environment = var.environment
