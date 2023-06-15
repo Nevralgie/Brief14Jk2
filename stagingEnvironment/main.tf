@@ -22,6 +22,6 @@ module "azure-webserver" {
 }
 
 resource "azurerm_resource_group" "webserver" {
-   name = "Brief14Jk"
+   name = "Brief14Jkstage"
    location = var.location
 }
