@@ -17,6 +17,6 @@ provider "azurerm" {
 }
 
 module "azure-webserver" {
-    source = "github.com/Nevralgie/WebservTerraform/azure-webserver/"
+    source = "github.com/Nevralgie/Brief14Jk2/azure-webserver/"
     environment = var.environment
 }
