@@ -22,3 +22,9 @@ variable "client_secret" {
    description = "Azure Client Secret"
    default = "YtY8Q~Q6kLoKDGGGEn3lGlILr--HZ5EsbJwOGba-"
 }
+
+variable "location" {
+   type = string
+   description = "Region"
+   default = "France Central"
+}
