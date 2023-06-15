@@ -7,7 +7,7 @@ variable "instance_size" {
 variable "location" {
    type = string
    description = "Region"
-   default = "West Europe"
+   default = "France Central"
 }
 
 variable "environment" {
