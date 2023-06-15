@@ -1,7 +1,7 @@
-resource "azurerm_resource_group" "webserver" {
-   name = "Brief14Jk"
-   location = var.location
-}
+#resource "azurerm_resource_group" "webserver" {
+   #name = "Brief14Jk"
+   #location = var.location
+#}
 
 
 resource "azurerm_network_security_group" "allowedports" {
