@@ -20,3 +20,8 @@ module "azure-webserver" {
     source = "github.com/Nevralgie/Brief14Jk2/azure-webserver/"
     environment = var.environment
 }
+
+resource "azurerm_resource_group" "webserver" {
+   name = "Brief14Jk"
+   location = var.location
+}
