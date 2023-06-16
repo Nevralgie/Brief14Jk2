@@ -7,11 +7,11 @@ sudo apt install docker.io -y
 #sudo apt update && sudo apt upgrade -y
 #sudo apt install docker.io -y
 sudo usermod -aG docker $USER
-sudo docker build -t appb14tom .
-sudo docker image tag appb14tom:latest nevii/appb14tom:latest
-sudo docker image push nevii/appb14tom:latest
+#sudo docker build -t appb14tom .
+#sudo docker image tag appb14tom:latest nevii/appb14tom:latest
+#sudo docker image push nevii/appb14tom:latest
 #Creating container
-sudo docker run -d -p 1234:1234 -h appb14 nevii/appb14tom:latest
+sudo docker run -d -p 1234:1234 -h apptestjkb14 nevii/appb14tom:latest
 
 #Installing Azure CLI to create a registry and deploy a managed container with the previous app  
 #sudo curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
