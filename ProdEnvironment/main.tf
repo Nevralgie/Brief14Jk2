@@ -29,7 +29,3 @@ module "azure-webserver" {
     tenant_id = var.tenant_id
 }
 
-resource "azurerm_resource_group" "webserver" {
-   name = "B14JkProd"
-   location = var.location
-}
