@@ -25,7 +25,3 @@ module "azure-webserver" {
     environment = var.environment
 }
 
-resource "azurerm_resource_group" "webserver" {
-   name = "Brief14Jkstage"
-   location = var.location
-}
