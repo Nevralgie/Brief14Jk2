@@ -12,7 +12,7 @@ variables:
   azureLocation: 'westeurope'
   # Terraform settings
   terraformWorkingDirectory: '$(System.DefaultWorkingDirectory)/Brief14Jk2/stagingEnvironment/'
-  terraformVersion: '1.5.0'
+  terraformVersion: '0.12.25'
 
 stages:
   - stage: TerraformContinuousIntegration
