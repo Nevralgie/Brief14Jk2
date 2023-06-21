@@ -1,0 +1,52 @@
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/main
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - checkout: self
+    clean: true
+    fetchTags: false
+  - task: Docker@2
+    displayName: buildAndPush
+    inputs:
+      containerRegistry: 95d765cf-65b9-494b-8910-27d14538e272
+  - task: TerraformInstaller@0
+    displayName: Use Terraform latest
+  - task: TerraformTaskV4@4
+    displayName: 'Terraform : azurerm'
+    inputs:
+      workingDirectory: stagingEnvironment
+      backendServiceArm: 2d4bdb31-4faa-400d-9fb7-d99ac1b59b24
+      backendAzureRmResourceGroupName: ResourceGroupJenkinsTom
+      backendAzureRmStorageAccountName: storagedevopstom
+      backendAzureRmContainerName: tfstateblob
+      backendAzureRmKey: tf/
+  - task: TerraformTaskV4@4
+    displayName: 'Terraform : azurerm'
+    inputs:
+      command: apply
+      workingDirectory: stagingEnvironment
+      commandOptions: -auto-approve
+      environmentServiceNameAzureRM: 2d4bdb31-4faa-400d-9fb7-d99ac1b59b24
+  - task: TerraformTaskV4@4
+    displayName: 'Terraform : azurerm'
+    inputs:
+      workingDirectory: ProdEnvironment
+      backendServiceArm: 2d4bdb31-4faa-400d-9fb7-d99ac1b59b24
+      backendAzureRmResourceGroupName: ResourceGroupJenkinsTom
+      backendAzureRmStorageAccountName: storagedevopstom
+      backendAzureRmContainerName: tfstateblob
+      backendAzureRmKey: tf/
+  - task: TerraformTaskV4@4
+    displayName: 'Terraform : azurerm'
+    inputs:
+      command: apply
+      workingDirectory: ProdEnvironment
+      environmentServiceNameAzureRM: 2d4bdb31-4faa-400d-9fb7-d99ac1b59b24
+...
