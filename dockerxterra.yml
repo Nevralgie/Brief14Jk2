@@ -15,8 +15,8 @@ jobs:
   - task: Docker@2
     displayName: buildAndPush
     inputs:
-    containerRegistry: 'docker-registry'
-    repository: nevii/testazuredevopswithb14
+      containerRegistry: 'docker-registry'
+      repository: nevii/testazuredevopswithb14
   - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
     displayName: Use Terraform latest
   - task: TerraformTaskV4@4
