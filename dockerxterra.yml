@@ -16,7 +16,7 @@ jobs:
     displayName: buildAndPush
     inputs:
       containerRegistry: 95d765cf-65b9-494b-8910-27d14538e272
-  - task: TerraformInstaller@0
+  - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
     displayName: Use Terraform latest
   - task: TerraformTaskV4@4
     displayName: 'Terraform : azurerm'
